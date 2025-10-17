@@ -13,7 +13,7 @@ int main() {
         char Estado_1 = 'x';
         char CodigoDaCarta_1 [4] = "xxx";
         char NomeDaCidade_1 [50] = "xxx";
-        unsigned  Populacao_1 = 0;
+        unsigned int Populacao_1 = 0;
         float Area_1 = 0;
         float PIB_1 = 0.0;
         int NumeroDePontosTuristicos_1 = 0;
@@ -34,7 +34,7 @@ int main() {
         char Estado_2 = 'x';
         char CodigoDaCarta_2 [4] = "xxx";
         char NomeDaCidade_2 [50] = "xxx";
-        unsigned  Populacao_2 = 0;
+        unsigned int Populacao_2 = 0;
         float Area_2 = 0;
         float PIB_2 = 0.0;
         int NumeroDePontosTuristicos_2 = 0;
