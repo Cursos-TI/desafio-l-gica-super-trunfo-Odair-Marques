@@ -1,12 +1,9 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 2 - Comparação das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de comparação de cartas de cidades. 
-// Siga os comentários para implementar cada parte do desafio.
+//DESAFIO AVENTUREIRO
 
 int main() {
-    // Definição das variáveis para armazenar as propriedades das cidades
+
     // Você pode utilizar o código do primeiro desafio
         
         //Declarar e iniciar as variáveis para colher os dados da primeira carta
@@ -51,18 +48,9 @@ int main() {
         int Ponto_NumeroDePontosTuristicos_2 = 0;
         int Total_Pontos_2 = 0; //Armazenará o resultado da soma dos pontos (Super Poder).
 
-        //Varivel com intuito de esperar, 
-        char Esparerar = 'x';
+        //Variavel para escolha no menu.
+        int OpcaoMenu = 0;
 
-    // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
-    // utilizando a função scanf para capturar as entradas.
-    // utilize o código do primeiro desafio
-
-    // Exemplo:
-    // printf("Digite o código da cidade: ");
-    // scanf("%s", codigo);
-    // 
-    // (Repita para cada propriedade)   
 
     //Criar cabeçalho/logo para o jogo
     printf("================================= \n");
@@ -188,20 +176,7 @@ int main() {
 
     printf(" \n");//Pular uma linha
 
-    //Uma parada para visualizar as cartas.
-    printf("Insira qualquer carceterere e pressione ** \n");
-    printf(" ENTER para continuar. ************ \n");
-    scanf(" %c", &Esparerar);
-    
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
+   
     //Verificar a pontuação.
 
     //Quesito população.
@@ -319,108 +294,256 @@ int main() {
     Ponto_NumeroDePontosTuristicos_2 + Ponto_DensidadePopulacional_2 + Ponto_PIB_Percapta_2;
 
 
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
-    
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
 
     //Criar um cabeçalho...
     printf("========================================== \n");
     printf(">>>>>>>>>> APURAÇÃO DOS PONTOS <<<<<<<<<<< \n");
     printf("========================================== \n");
-
-    printf(" \n");//Pular uma linha.
-
-    printf("No quesito População:");
-    if(Ponto_Populacao_1 == 1){
-        printf(" %s. \n", NomeDaCidade_1);}
-    else if(Ponto_Populacao_2 == 1) {
-        printf(" %s. \n", NomeDaCidade_2);
-    }else{
-        printf(" Empate. \n");
-    }
+    //Criar o menu para o usário escolher qual atributo comparar.
+    printf("Para ver quem ganhou e em perdeu po item, escolha uma opção no menu abiaxo: \n");
+    printf("1 - Quesito População. \n");
+    printf("2 - Quesito Área. \n");
+    printf("3 - Quesito PIB. \n");
+    printf("4 - Quesito Número de Pontos Turísticos.\n");
+    printf("5 - Quesito Densidade Demográfica \n");
+    printf("6 - Quesito PIB Percapta. \n");
+    printf("7 - Carta Vencedora. \n");
+    printf("8 - Relatório Completo (Exibe a pontuação e a carta vencedora) \n");
     
-    printf("------------------------------------------ \n");//Traçar uma linha divisória.
+    scanf(" %d", &OpcaoMenu);//Receber a opção escolhida pelo usuário.
+
+    printf("\n");//Pular uma linha.
+
+    switch (OpcaoMenu)
+    {
+    case 1://Comparar a população.
+
+            printf("No quesito População: \n");
+
+            printf("Cidade de %s : %i \n",NomeDaCidade_1 , Populacao_1);
+            printf("Cidade de %s : %i \n",NomeDaCidade_2 , Ponto_Area_2);
+
+            printf("Resultado");
+
+            if(Ponto_Populacao_1 == 1){
+                printf(": Ponto para %s \n", NomeDaCidade_1);}
+            else if(Ponto_Populacao_2 == 1) {
+                printf(": Ponto para %s \n", NomeDaCidade_2);
+            }else{
+                printf(": Empate! \n");
+            }
+        
+        /* code */
+        break;
+
+    case 2://Comparar a área.
+
+            printf("No quesito Área: \n");
+
+            printf("Cidade de %s : %.2f \n", NomeDaCidade_1, Area_1);
+            printf("Cidade de %s : %.2f \n", NomeDaCidade_2, Area_2);
+
+            printf("Resultado");
 
 
-    printf("No quesito Área:");
-    if(Ponto_Area_1 == 1){
-        printf(" %s. \n", NomeDaCidade_1);}
-    else if(Ponto_Area_2 == 1){
-        printf(" %s. \n", NomeDaCidade_2);
-    }else{
-        printf(" Empate. \n");
-    }
-   printf("------------------------------------------ \n");//Traçar uma linha divisória.
+            if(Ponto_Area_1 == 1){
+                printf(": Ponto para %s \n", NomeDaCidade_1);}
+            else if(Ponto_Area_2 == 1){
+                printf(": Ponto para %s. \n", NomeDaCidade_2);
+            }else{
+                printf(" Empate! \n");
+            }
 
-    printf("No quesito PIB:");
-    if(Ponto_PIB_1 == 1){
-        printf(" %s. \n", NomeDaCidade_1);}
-    else if(Ponto_PIB_2 == 1){
-        printf(" %s. \n", NomeDaCidade_2);
-    }else{
-        printf(" Empate. \n");        
-    }
+        break;;
 
-   printf("------------------------------------------ \n");//Traçar uma linha divisória.
+    case 3://Comparar o PIB.
+        
+            printf("No quesito PIB: \n");
 
-    printf("No quesito Pontos Turisticos:");
-    if(Ponto_NumeroDePontosTuristicos_1 == 1){
-        printf(" %s. \n", NomeDaCidade_1);}
-    else if(Ponto_NumeroDePontosTuristicos_2 == 1){
-        printf(" %s. \n", NomeDaCidade_2);
-    }else{
-        printf(" Empate. \n");   
-    }
-   
-    printf("------------------------------------------ \n");//Traçar uma linha divisória.
+            printf("Cidade de %s : %.2f \n", NomeDaCidade_1, PIB_1);
+            printf("Cidade de %s : %.2f \n", NomeDaCidade_2, PIB_2);
 
-    printf("No quesito Densidade Populacional:");
-    if(Ponto_DensidadePopulacional_1 == 1){
-        printf(" %s. \n", NomeDaCidade_1);}
-    else if(Ponto_DensidadePopulacional_2 == 1){
-        printf(" %s. \n", NomeDaCidade_2);
-    }else{
-       printf(" Empate. \n");   
-    }
+            printf("Resultado");
 
+            if(Ponto_PIB_1 == 1){
+                printf(": Ponto para %s \n", NomeDaCidade_1);}
+            else if(Ponto_PIB_2 == 1){
+                printf(": Ponto para %s \n", NomeDaCidade_2);
+            }else{
+                printf(" Empate! \n");        
+            }
 
-   printf("------------------------------------------ \n");//Traçar uma linha divisória.
+        break;
 
-    printf("No quesito PIB percapta:");
-    if(Ponto_PIB_Percapta_1 == 1){
-        printf(" %s. \n", NomeDaCidade_1);}
-    else if(Ponto_PIB_Percapta_2 == 1){
-        printf(" %s. \n", NomeDaCidade_2);
-    }else{
-        printf(" Empate. \n");
-    }
+    case 4://Comparar os pontos turísticos.
 
+            printf("No quesito Pontos Turisticos: \n");
 
-   printf("\n"); //Pular uma linha.
+            printf("Cidade de %s : %i \n", NomeDaCidade_1, NumeroDePontosTuristicos_1);
+            printf("Cidade de %s : %i \n", NomeDaCidade_2, NumeroDePontosTuristicos_2);
 
-   printf(">>>>>>>>>> C I D A D E  V E N C E D O R A <<<<<<<<<<\n");//Traçar uma linha divisória.
+            printf("Resultado");
 
-    //Exibir o Vencedor
-
- 
-
-    if(Total_Pontos_1 > Total_Pontos_2){
-        printf("A cidade vencedora por %i pontos a %i é: %s.\n", Total_Pontos_1,Total_Pontos_2, NomeDaCidade_1);
-    }   
-
-    if (Total_Pontos_1 < Total_Pontos_2){
-        printf("A cidade vencedora por %i pontos a %i é: %s.\n",Total_Pontos_2, Total_Pontos_1, NomeDaCidade_2);
-    }
-
-        if (Total_Pontos_1 == Total_Pontos_2){
-        printf("Por %i pontos a %i, houve um empate. \n",Total_Pontos_1, Total_Pontos_2);
-    }
+            if(Ponto_NumeroDePontosTuristicos_1 == 1){
+                printf(": Ponto para %s \n", NomeDaCidade_1);}
+            else if(Ponto_NumeroDePontosTuristicos_2 == 1){
+                printf(": Ponto para %s \n", NomeDaCidade_2);
+            }else{
+                printf(": Empate! \n");   
+            }
+        
+        break;
     
-printf("|||||||||||||||||||||||||||||||||||||||||||||||||||||\n"); //criar uma barra de rodapé
-printf(" \n");//Pular uma linha.
+    case 5://Comparar a densidade demográfica(Vence quem tiver o menhor número de pessoas por km²).
+
+            printf("No quesito Densidade Demográfica:");
+            printf("(Pontua quem tiver o menor número de habitantes por km²). \n");
+
+            printf("Cidade de %s : %.2f \n", NomeDaCidade_1, DensidadePopulacional_1);
+            printf("Cidade de %s : %.2f \n", NomeDaCidade_2, DensidadePopulacional_2);
+            
+            printf("Resultado"); 
+
+            if(Ponto_DensidadePopulacional_1 == 1){
+                printf(": Ponto para %s. \n", NomeDaCidade_1);}
+            else if(Ponto_DensidadePopulacional_2 == 1){
+                printf(": Ponto para %s. \n", NomeDaCidade_2);
+            }else{
+                printf(": Empate! \n");   
+            }
+        
+
+        break;
+
+    case 6://Comparar o PIB.
+        
+            printf("No quesito PIB percapta: \n");
+
+            printf("Cidade de %s : %.2f \n", NomeDaCidade_1, PIB_Percapta_1);
+            printf("Cidade de %s : %.2f \n", NomeDaCidade_2, PIB_Percapta_2);
+
+            printf("Resultado");
+
+            if(Ponto_PIB_Percapta_1 == 1){
+                printf(": Ponto para %s. \n", NomeDaCidade_1);}
+            else if(Ponto_PIB_Percapta_2 == 1){
+                printf(": Ponto para %s. \n", NomeDaCidade_2);
+            }else{
+                printf(" Empate. \n");
+            }
+            
+        break;
+    case 7://Exibir a cidade vencedora.
+        
+            printf(">>>>>>>>>> C I D A D E  V E N C E D O R A <<<<<<<<<<\n");//Traçar uma linha divisória.
+            
+            if(Total_Pontos_1 > Total_Pontos_2){
+                printf("A cidade vencedora por %i pontos a %i é: %s.\n", Total_Pontos_1,Total_Pontos_2, NomeDaCidade_1);
+            }   
+
+            if (Total_Pontos_1 < Total_Pontos_2){
+                printf("A cidade vencedora por %i pontos a %i é: %s.\n",Total_Pontos_2, Total_Pontos_1, NomeDaCidade_2);
+            }
+
+            if (Total_Pontos_1 == Total_Pontos_2){
+                printf("Por %i pontos a %i, houve um empate. \n",Total_Pontos_1, Total_Pontos_2);
+            }
+    
+            printf("|||||||||||||||||||||||||||||||||||||||||||||||||||||\n"); //criar uma barra de rodapé
+            printf(" \n");//Pular uma linha.
+
+        break;
+
+    case 8://Exibir um relatório completo.
+            
+            printf("------------------------------------------ \n");//Traçar uma linha divisória.
+
+
+            printf("No quesito Área:");
+            if(Ponto_Area_1 == 1){
+                printf(" %s. \n", NomeDaCidade_1);}
+            else if(Ponto_Area_2 == 1){
+                printf(" %s. \n", NomeDaCidade_2);
+            }else{
+                printf(" Empate. \n");
+            }
+            printf("------------------------------------------ \n");//Traçar uma linha divisória.
+
+            printf("No quesito PIB:");
+            if(Ponto_PIB_1 == 1){
+                printf(" %s. \n", NomeDaCidade_1);}
+            else if(Ponto_PIB_2 == 1){
+                printf(" %s. \n", NomeDaCidade_2);
+            }else{
+                printf(" Empate. \n");        
+            }
+
+            printf("------------------------------------------ \n");//Traçar uma linha divisória.
+
+            printf("No quesito Pontos Turisticos:");
+            if(Ponto_NumeroDePontosTuristicos_1 == 1){
+                printf(" %s. \n", NomeDaCidade_1);}
+            else if(Ponto_NumeroDePontosTuristicos_2 == 1){
+                printf(" %s. \n", NomeDaCidade_2);
+            }else{
+                printf(" Empate. \n");   
+            }
+        
+            printf("------------------------------------------ \n");//Traçar uma linha divisória.
+
+            printf("No quesito Densidade Populacional:");
+            if(Ponto_DensidadePopulacional_1 == 1){
+                printf(" %s. \n", NomeDaCidade_1);}
+            else if(Ponto_DensidadePopulacional_2 == 1){
+                printf(" %s. \n", NomeDaCidade_2);
+            }else{
+            printf(" Empate. \n");   
+            }
+
+
+            printf("------------------------------------------ \n");//Traçar uma linha divisória.
+
+            printf("No quesito PIB percapta:");
+            if(Ponto_PIB_Percapta_1 == 1){
+                printf(" %s. \n", NomeDaCidade_1);}
+            else if(Ponto_PIB_Percapta_2 == 1){
+                printf(" %s. \n", NomeDaCidade_2);
+            }else{
+                printf(" Empate. \n");
+            }
+
+
+            printf("\n"); //Pular uma linha.
+
+            printf(">>>>>>>>>> C I D A D E  V E N C E D O R A <<<<<<<<<<\n");//Traçar uma linha divisória.
+
+            //Exibir o Vencedor
+
+        
+
+            if(Total_Pontos_1 > Total_Pontos_2){
+                printf("A cidade vencedora por %i pontos a %i é: %s.\n", Total_Pontos_1,Total_Pontos_2, NomeDaCidade_1);
+            }   
+
+            if (Total_Pontos_1 < Total_Pontos_2){
+                printf("A cidade vencedora por %i pontos a %i é: %s.\n",Total_Pontos_2, Total_Pontos_1, NomeDaCidade_2);
+            }
+
+                if (Total_Pontos_1 == Total_Pontos_2){
+                printf("Por %i pontos a %i, houve um empate. \n",Total_Pontos_1, Total_Pontos_2);
+            }
+            
+            printf("|||||||||||||||||||||||||||||||||||||||||||||||||||||\n"); //criar uma barra de rodapé
+            printf(" \n");//Pular uma linha.
+
+        break;
+    default:
+        printf("Opção errada... \n");  
+      break;
+    }
+
+        printf("\n"); //Pular uma linha.
+
 
     return 0;
 }
