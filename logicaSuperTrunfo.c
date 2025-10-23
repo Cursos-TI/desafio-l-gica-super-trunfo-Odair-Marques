@@ -51,6 +51,9 @@ int main() {
         //Variavel para escolha no menu.
         int OpcaoMenu = 0;
 
+        //Variável, volta ao menu ou encerrar
+        char VoltarMenu; //S = sim ou N = não.
+        
 
     //Criar cabeçalho/logo para o jogo
     printf("================================= \n");
@@ -320,8 +323,8 @@ int main() {
 
             printf("No quesito População: \n");
 
-            printf("Cidade de %s : %i \n",NomeDaCidade_1 , Populacao_1);
-            printf("Cidade de %s : %i \n",NomeDaCidade_2 , Ponto_Area_2);
+            printf("Cidade de %s: %i \n",NomeDaCidade_1 , Populacao_1);
+            printf("Cidade de %s: %i \n",NomeDaCidade_2 , Populacao_2);
 
             printf("Resultado");
 
@@ -330,7 +333,21 @@ int main() {
             else if(Ponto_Populacao_2 == 1) {
                 printf(": Ponto para %s \n", NomeDaCidade_2);
             }else{
+                
                 printf(": Empate! \n");
+
+                printf("Ver outro quesito? S - Sim ou N = Não.\n");//Perguntar ao usuário se quer ver outro resultado.
+                scanf(" %c", &VoltarMenu);
+
+                if(VoltarMenu =='S' || VoltarMenu == 's'){
+                    printf("Voltando para o menu...\n");
+                }else if (VoltarMenu == 'N' || VoltarMenu == 'n'){
+                    printf("Encerrando ...\n");
+                }else{
+                    printf("Opção errada! \n");
+                }               
+                
+
             }
         
         /* code */
@@ -340,8 +357,8 @@ int main() {
 
             printf("No quesito Área: \n");
 
-            printf("Cidade de %s : %.2f \n", NomeDaCidade_1, Area_1);
-            printf("Cidade de %s : %.2f \n", NomeDaCidade_2, Area_2);
+            printf("Cidade de %s: %.2f \n", NomeDaCidade_1, Area_1);
+            printf("Cidade de %s: %.2f \n", NomeDaCidade_2, Area_2);
 
             printf("Resultado");
 
@@ -352,6 +369,17 @@ int main() {
                 printf(": Ponto para %s. \n", NomeDaCidade_2);
             }else{
                 printf(" Empate! \n");
+
+                printf("Ver outro quesito? S - Sim ou N = Não.\n");//Perguntar ao usuário se quer ver outro resultado.
+                scanf(" %c", &VoltarMenu);
+
+                if(VoltarMenu =='S' || VoltarMenu == 's'){
+                    printf("Voltando para o menu...\n");
+                }else if (VoltarMenu == 'N' || VoltarMenu == 'n'){
+                    printf("Encerrando ...\n");
+                }else{
+                    printf("Opção errada! \n");
+                }                   
             }
 
         break;;
@@ -360,8 +388,8 @@ int main() {
         
             printf("No quesito PIB: \n");
 
-            printf("Cidade de %s : %.2f \n", NomeDaCidade_1, PIB_1);
-            printf("Cidade de %s : %.2f \n", NomeDaCidade_2, PIB_2);
+            printf("Cidade de %s: %.2f \n", NomeDaCidade_1, PIB_1);
+            printf("Cidade de %s: %.2f \n", NomeDaCidade_2, PIB_2);
 
             printf("Resultado");
 
@@ -370,7 +398,18 @@ int main() {
             else if(Ponto_PIB_2 == 1){
                 printf(": Ponto para %s \n", NomeDaCidade_2);
             }else{
-                printf(" Empate! \n");        
+                printf(" Empate! \n"); 
+
+                printf("Ver outro quesito? S - Sim ou N = Não.\n");//Perguntar ao usuário se quer ver outro resultado.
+                scanf(" %c", &VoltarMenu);
+
+                if(VoltarMenu =='S' || VoltarMenu == 's'){
+                    printf("Voltando para o menu...\n");
+                }else if (VoltarMenu == 'N' || VoltarMenu == 'n'){
+                    printf("Encerrando ...\n");
+                }else{
+                    printf("Opção errada! \n");
+                }                          
             }
 
         break;
@@ -379,8 +418,8 @@ int main() {
 
             printf("No quesito Pontos Turisticos: \n");
 
-            printf("Cidade de %s : %i \n", NomeDaCidade_1, NumeroDePontosTuristicos_1);
-            printf("Cidade de %s : %i \n", NomeDaCidade_2, NumeroDePontosTuristicos_2);
+            printf("Cidade de %s: %i \n", NomeDaCidade_1, NumeroDePontosTuristicos_1);
+            printf("Cidade de %s: %i \n", NomeDaCidade_2, NumeroDePontosTuristicos_2);
 
             printf("Resultado");
 
@@ -389,7 +428,18 @@ int main() {
             else if(Ponto_NumeroDePontosTuristicos_2 == 1){
                 printf(": Ponto para %s \n", NomeDaCidade_2);
             }else{
-                printf(": Empate! \n");   
+
+                printf(": Empate! \n"); 
+
+                printf("Ver outro quesito? S - Sim ou N = Não.\n");//Perguntar ao usuário se quer ver outro resultado.
+                scanf(" %c", &VoltarMenu);
+                if(VoltarMenu =='S' || VoltarMenu == 's'){
+                    printf("Voltando para o menu...\n");
+                }else if (VoltarMenu == 'N' || VoltarMenu == 'n'){
+                    printf("Encerrando ...\n");
+                }else{
+                    printf("Opção errada! \n");
+                }   
             }
         
         break;
@@ -399,8 +449,8 @@ int main() {
             printf("No quesito Densidade Demográfica:");
             printf("(Pontua quem tiver o menor número de habitantes por km²). \n");
 
-            printf("Cidade de %s : %.2f \n", NomeDaCidade_1, DensidadePopulacional_1);
-            printf("Cidade de %s : %.2f \n", NomeDaCidade_2, DensidadePopulacional_2);
+            printf("Cidade de %s: %.2f \n", NomeDaCidade_1, DensidadePopulacional_1);
+            printf("Cidade de %s: %.2f \n", NomeDaCidade_2, DensidadePopulacional_2);
             
             printf("Resultado"); 
 
@@ -409,7 +459,17 @@ int main() {
             else if(Ponto_DensidadePopulacional_2 == 1){
                 printf(": Ponto para %s. \n", NomeDaCidade_2);
             }else{
-                printf(": Empate! \n");   
+                printf(": Empate! \n"); 
+                printf("Ver outro quesito? S - Sim ou N = Não.\n");//Perguntar ao usuário se quer ver outro resultado.
+                scanf(" %c", &VoltarMenu);
+
+                if(VoltarMenu =='S' || VoltarMenu == 's'){
+                    printf("Voltando para o menu...\n");
+                }else if (VoltarMenu == 'N' || VoltarMenu == 'n'){
+                    printf("Encerrando ...\n");
+                }else{
+                    printf("Opção errada! \n");
+                }                     
             }
         
 
@@ -419,8 +479,8 @@ int main() {
         
             printf("No quesito PIB percapta: \n");
 
-            printf("Cidade de %s : %.2f \n", NomeDaCidade_1, PIB_Percapta_1);
-            printf("Cidade de %s : %.2f \n", NomeDaCidade_2, PIB_Percapta_2);
+            printf("Cidade de %s: %.2f \n", NomeDaCidade_1, PIB_Percapta_1);
+            printf("Cidade de %s: %.2f \n", NomeDaCidade_2, PIB_Percapta_2);
 
             printf("Resultado");
 
@@ -429,7 +489,19 @@ int main() {
             else if(Ponto_PIB_Percapta_2 == 1){
                 printf(": Ponto para %s. \n", NomeDaCidade_2);
             }else{
+                
                 printf(" Empate. \n");
+
+                printf("Ver outro quesito? S - Sim ou N = Não.\n");//Perguntar ao usuário se quer ver outro resultado.
+                scanf(" %c", &VoltarMenu);
+
+                if(VoltarMenu =='S' || VoltarMenu == 's'){
+                    printf("Voltando para o menu...\n");
+                }else if (VoltarMenu == 'N' || VoltarMenu == 'n'){
+                    printf("Encerrando ...\n");
+                }else{
+                    printf("Opção errada! \n");
+                }                   
             }
             
         break;
